@@ -1,0 +1,24 @@
+#search-bar {
+    display: flex;
+    background-color: white;
+    border-radius: 40px;
+    margin: 50px auto;
+    width: 400px;
+    box-shadow: 3px 3px 10px -3px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+input {
+    all: unset;
+    flex-grow: 1;
+    padding: 10px 20px;
+}
+
+button {
+    border: none;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 40px;
+    background-color: rgb(168, 208, 245);
+    cursor: pointer;
+}

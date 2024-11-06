@@ -1,0 +1,53 @@
+<app-search-bar [(search)]="search"></app-search-bar>
+
+<!-- 1 -->
+<!-- <div id="card-list">
+  <app-playing-card
+    ngFor="let monster of filteredMonsters()"
+    [monster]="monster"
+  />
+</div> -->
+
+<!-- 2 -->
+<!-- <div id="card-list">
+  @for (monster of filteredMonsters(); track monster) {
+  <app-playing-card [monster]="monster" />
+  } @empty {
+    <div class="center">No monsters found</div>
+  }
+</div> -->
+
+<!-- 1 -->
+<!-- <div *ngIf="filteredMonsters().length == 0; else found" class="center">
+  No monsters found
+</div> -->
+
+<!-- 2 -->
+<!-- <div *ngIf="filteredMonsters().length == 0; then notFound; else found"></div>
+
+<ng-template #notFound>
+  <div class="center">No monsters found</div>
+</ng-template>
+
+<ng-template #found>
+  <div class="center">Found {{ filteredMonsters().length }} monster(s).</div>
+</ng-template> -->
+
+<!-- 3 -->
+<!-- @if (filteredMonsters().length == 0) {
+<div class="center">No monsters found</div>
+} @else {
+<div class="center">Found {{ filteredMonsters().length }} monster(s).</div>
+} -->
+
+<!-- Code optimal -->
+<div id="card-list">
+  @for (monster of filteredMonsters(); track monster) {
+  <app-playing-card [monster]="monster" />
+  } @empty {
+  <div class="center">No monsters found</div>
+  }
+</div>
+@if (filteredMonsters().length > 0) {
+<div class="center">Found {{ filteredMonsters().length }} monster(s).</div>
+}
